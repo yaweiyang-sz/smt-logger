@@ -10,7 +10,7 @@ include_directories(./spdlog/sinks)
 aux_source_directory(. DIR_SRCS)
 
 # set as static library
-add_library(smt_logger STATIC ${DIR_SRCS})
+add_library(smt_logger SHARED ${DIR_SRCS})
 
 # add pthread library
 find_package (Threads)
