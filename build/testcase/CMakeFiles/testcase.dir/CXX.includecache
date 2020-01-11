@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../testcase/../src/smt_logger.h
+string
+-
+
+/home/leica/Workspace/smt_logger/testcase/testcase.cpp
+smt_logger.h
+/home/leica/Workspace/smt_logger/testcase/smt_logger.h
+iostream
+-
+thread
+-
+

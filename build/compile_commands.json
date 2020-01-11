@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/leica/Workspace/smt_logger/build/src",
+  "command": "/usr/bin/c++  -DLOG_DEBUG -I/home/leica/Workspace/smt_logger/src/. -I/home/leica/Workspace/smt_logger/src/./spdlog/details -I/home/leica/Workspace/smt_logger/src/./spdlog/fmt -I/home/leica/Workspace/smt_logger/src/./spdlog/sinks  -g   -o CMakeFiles/smt_logger.dir/smt_logger.cpp.o -c /home/leica/Workspace/smt_logger/src/smt_logger.cpp",
+  "file": "/home/leica/Workspace/smt_logger/src/smt_logger.cpp"
+},
+{
+  "directory": "/home/leica/Workspace/smt_logger/build/testcase",
+  "command": "/usr/bin/c++  -DLOG_DEBUG -I/home/leica/Workspace/smt_logger/testcase/../src  -g   -o CMakeFiles/testcase.dir/testcase.cpp.o -c /home/leica/Workspace/smt_logger/testcase/testcase.cpp",
+  "file": "/home/leica/Workspace/smt_logger/testcase/testcase.cpp"
+}
+]

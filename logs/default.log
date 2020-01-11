@@ -1,0 +1,80 @@
+[2019-12-25 10:43:34.955][W][thread 24808][module default][tag for each]: multi logs: 0
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 0
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 1
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 1
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 2
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 2
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 3
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 3
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 4
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 4
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 5
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 5
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 6
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 6
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 7
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 7
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 8
+[2019-12-25 10:43:35.019][W][thread 24808][module default][tag for each]: multi logs: 8
+[2019-12-25 10:43:35.020][W][thread 24808][module default][tag for each]: multi logs: 9
+[2019-12-25 10:43:35.020][W][thread 24808][module default][tag for each]: multi logs: 9
+[2019-12-25 10:46:24.262][W][thread 22208][tag for each]: multi logs: 0
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 0
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 1
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 1
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 2
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 2
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 3
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 3
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 4
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 4
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 5
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 5
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 6
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 6
+[2019-12-25 10:46:24.322][W][thread 22208][tag for each]: multi logs: 7
+[2019-12-25 10:46:24.323][W][thread 22208][tag for each]: multi logs: 7
+[2019-12-25 10:46:24.323][W][thread 22208][tag for each]: multi logs: 8
+[2019-12-25 10:46:24.323][W][thread 22208][tag for each]: multi logs: 8
+[2019-12-25 10:46:24.323][W][thread 22208][tag for each]: multi logs: 9
+[2019-12-25 10:46:24.323][W][thread 22208][tag for each]: multi logs: 9
+[2020-01-02 09:29:24.667][W][thread 27852][tag multi logs]: warn logs: 0
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 0
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 1
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 1
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 2
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 2
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 3
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 3
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 4
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 4
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 5
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 5
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 6
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 6
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 7
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 7
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 8
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 8
+[2020-01-02 09:29:24.743][W][thread 27852][tag multi logs]: warn logs: 9
+[2020-01-02 09:29:24.743][I][thread 27852][tag multi logs]: info logs: 9
+[2020-01-02 09:29:31.461][W][thread 10636][tag multi logs]: warn logs: 0
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 0
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 1
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 1
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 2
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 2
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 3
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 3
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 4
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 4
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 5
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 5
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 6
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 6
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 7
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 7
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 8
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 8
+[2020-01-02 09:29:31.518][W][thread 10636][tag multi logs]: warn logs: 9
+[2020-01-02 09:29:31.518][I][thread 10636][tag multi logs]: info logs: 9
