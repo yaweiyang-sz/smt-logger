@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../lib/libsmt_loggerd.a  CMakeFiles/smt_logger.dir/smt_logger.cpp.o
-/usr/bin/ranlib ../lib/libsmt_loggerd.a

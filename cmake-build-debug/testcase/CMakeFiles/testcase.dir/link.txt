@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/testcase.dir/testcase.cpp.o  -o ../bin/testcase ../lib/libsmt_loggerd.a -lpthread 
