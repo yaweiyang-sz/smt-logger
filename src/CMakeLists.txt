@@ -23,12 +23,23 @@ endif()
 find_package(Threads)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 
-# setup output
-install(
-  TARGETS ${CMAKE_PROJECT_NAME}
-  RUNTIME DESTINATION bin
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib)
+# install script
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
 
-# setup headers
+install(TARGETS ${CMAKE_PROJECT_NAME}
+        EXPORT ${CMAKE_PROJECT_NAME}-targets
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
+
+install(EXPORT ${CMAKE_PROJECT_NAME}-targets
+        FILE ${CMAKE_PROJECT_NAME}-targets.cmake
+        NAMESPACE Leica::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${CMAKE_PROJECT_NAME})
+
 install(FILES ${PROJECT_SOURCE_DIR}/smt_logger.h DESTINATION include)
+
+install(FILES ${CMAKE_CURRENT_LIST_DIR}/cmake/${CMAKE_PROJECT_NAME}-config.cmake
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${CMAKE_PROJECT_NAME})

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/smt_logger.h
+string
+-
+
+/home/zhangfei/workspace/smt_logger_new/testcase/testcase.cpp
+smt_logger.h
+/home/zhangfei/workspace/smt_logger_new/testcase/smt_logger.h
+iostream
+-
+thread
+-
+
