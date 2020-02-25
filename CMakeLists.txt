@@ -1,4 +1,10 @@
 cmake_minimum_required(VERSION 3.0.0)
+
+if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            CACHE STRING "")
+endif()
+
 project(smt_logger)
 
 # change output dirs
@@ -15,7 +21,7 @@ add_subdirectory(src)
 add_subdirectory(testcase)
 
 # install script
-SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
+#SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
