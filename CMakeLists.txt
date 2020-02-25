@@ -13,3 +13,23 @@ endif ()
 
 add_subdirectory(src)
 add_subdirectory(testcase)
+
+# install script
+SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
+
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
+
+install(FILES ${PROJECT_SOURCE_DIR}/src/smt_logger.h DESTINATION include)
+
+install(TARGETS ${CMAKE_PROJECT_NAME}
+        EXPORT ${CMAKE_PROJECT_NAME}-targets
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin)
+
+install(EXPORT ${CMAKE_PROJECT_NAME}-targets
+        NAMESPACE Leica::
+        FILE ${CMAKE_PROJECT_NAME}-config.cmake
+        DESTINATION lib/cmake/${CMAKE_PROJECT_NAME})

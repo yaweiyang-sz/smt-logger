@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libsmt_loggerd.so -o ../lib/libsmt_loggerd.so CMakeFiles/smt_logger.dir/smt_logger.cpp.o -lpthread 
