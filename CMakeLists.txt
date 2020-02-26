@@ -5,7 +5,7 @@ if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
             CACHE STRING "")
 endif()
 
-project(smt_logger)
+project(smt-logger)
 
 # change output dirs
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
