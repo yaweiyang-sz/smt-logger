@@ -1,6 +1,6 @@
 project(testcase)
 
-include_directories(../src)
+include_directories(../library)
 
 aux_source_directory(. DIR_SRCS)
 add_executable(testcase ${DIR_SRCS})

@@ -17,8 +17,8 @@ if (CMAKE_BUILD_TYPE STREQUAL Debug)
     add_definitions(-DLOG_DEBUG)
 endif ()
 
-add_subdirectory(src)
-add_subdirectory(testcase)
+add_subdirectory(library)
+add_subdirectory(tests)
 
 # install script
 #SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
@@ -27,7 +27,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
 
-install(FILES ${PROJECT_SOURCE_DIR}/src/smt_logger.h DESTINATION include)
+install(FILES ${PROJECT_SOURCE_DIR}/library/smt_logger.h DESTINATION include)
 
 install(TARGETS ${CMAKE_PROJECT_NAME}
         EXPORT ${CMAKE_PROJECT_NAME}-targets
