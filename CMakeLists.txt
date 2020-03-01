@@ -1,10 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-            CACHE STRING "")
-endif()
-
 project(smt-logger)
 
 # change output dirs
@@ -25,7 +20,7 @@ add_subdirectory(tests)
 #SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/library>
         $<INSTALL_INTERFACE:include>)
 
 install(FILES ${PROJECT_SOURCE_DIR}/library/smt_logger.h DESTINATION include)
