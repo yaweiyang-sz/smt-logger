@@ -4,8 +4,6 @@
 
 #define PAUSE printf("Press Enter key to continue..."); fgetc(stdin);
 
-std::string MODULE_NAME = "camera";
-
 void test_level_off(){
 	setupLogger({"default", LogLevel::OFF, false, 3});
 

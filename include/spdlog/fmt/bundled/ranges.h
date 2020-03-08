@@ -1,4 +1,4 @@
-// Formatting library for C++ - experimental range support
+// Formatting src for C++ - experimental range support
 //
 // Copyright (c) 2012 - present, Victor Zverovich
 // All rights reserved.

@@ -1,4 +1,4 @@
-// Formatting library for C++ - the core API
+// Formatting src for C++ - the core API
 //
 // Copyright (c) 2012 - present, Victor Zverovich
 // All rights reserved.
@@ -15,7 +15,7 @@
 #include <string>
 #include <type_traits>
 
-// The fmt library version in the form major * 10000 + minor * 100 + patch.
+// The fmt src version in the form major * 10000 + minor * 100 + patch.
 #define FMT_VERSION 60000
 
 #ifdef __has_feature
@@ -236,7 +236,7 @@ using void_t = typename internal::void_t_impl<Ts...>::type;
 /**
   An implementation of ``std::basic_string_view`` for pre-C++17. It provides a
   subset of the API. ``fmt::basic_string_view`` is used for format strings even
-  if ``std::string_view`` is available to prevent issues when a library is
+  if ``std::string_view`` is available to prevent issues when a src is
   compiled with a different ``-std`` option than the client code (which is not
   recommended).
  */

@@ -1,4 +1,4 @@
-// Formatting library for C++
+// Formatting src for C++
 //
 // Copyright (c) 2012 - 2016, Victor Zverovich
 // All rights reserved.

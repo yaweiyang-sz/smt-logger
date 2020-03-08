@@ -17,7 +17,7 @@ namespace spdlog {
 namespace sinks {
 
 /**
- * Sink that write to systemd journal using the `sd_journal_send()` library call.
+ * Sink that write to systemd journal using the `sd_journal_send()` src call.
  *
  * Locking is not needed, as `sd_journal_send()` itself is thread-safe.
  */

@@ -13,7 +13,7 @@
 namespace spdlog {
 namespace sinks {
 /**
- * Sink that write to syslog using the `syscall()` library call.
+ * Sink that write to syslog using the `syscall()` src call.
  */
 template<typename Mutex>
 class syslog_sink : public base_sink<Mutex>
