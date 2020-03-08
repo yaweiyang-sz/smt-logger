@@ -19,4 +19,4 @@ add_subdirectory(src)
 add_subdirectory(test)
 
 # install script
-SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
+#SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
