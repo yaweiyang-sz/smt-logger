@@ -16,7 +16,6 @@ find_package(Threads)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
-set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER ${CMAKE_SOURCE_DIR}/include/smt_logger.h)
 
 # 写入库的版本信息
 include(CMakePackageConfigHelpers)
@@ -26,6 +25,10 @@ write_basic_package_version_file(
         COMPATIBILITY AnyNewerVersion)
 
 # 将库文件，可执行文件，头文件安装到指定目录
+set_target_properties(${PROJECT_NAME}
+        PROPERTIES PUBLIC_HEADER
+        ${CMAKE_SOURCE_DIR}/include/smt_logger.h)
+
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}Targets
         LIBRARY DESTINATION lib

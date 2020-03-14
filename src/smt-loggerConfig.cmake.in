@@ -6,7 +6,5 @@ include(CMakeFindDependencyMacro)
 # 如果你的项目需要依赖其他的库，可以使用下面语句，用法与find_package相同
 # find_dependency(MYDEP REQUIRED)
 
-# Any extra setup
-
 # Add the targets file
-include("${CMAKE_CURRENT_LIST_DIR}/smt-loggerTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}Targets.cmake")
