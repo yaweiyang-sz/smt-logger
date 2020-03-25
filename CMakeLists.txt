@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(SmtLogger)
+project(smt-logger)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
@@ -18,4 +18,4 @@ add_subdirectory(src)
 add_subdirectory(tests)
 
 # for test
-#SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
+SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
