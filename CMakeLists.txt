@@ -1,22 +1,21 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(smt-logger)
+project(SmtLogger)
 
-# change output dirs
-#set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-#set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_DEBUG_POSTFIX d)
 
 if (CMAKE_BUILD_TYPE STREQUAL Debug)
     add_definitions(-DLOG_DEBUG)
-endif ()
+endif()
 
 include_directories(include)
 
 add_subdirectory(src)
-add_subdirectory(test)
+add_subdirectory(tests)
 
-# install script
+# for test
 #SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)

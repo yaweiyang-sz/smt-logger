@@ -1,6 +1,5 @@
-project(smt-logger VERSION 1.0.0)
+project(SmtLogger VERSION 1.0.0)
 
-# scan all cpp into DIR_SRCS var
 aux_source_directory(. DIR_SRCS)
 
 if(UNIX)
@@ -11,24 +10,25 @@ elseif(APPLE)
   add_library(${PROJECT_NAME} SHARED ${DIR_SRCS})
 endif()
 
-# add pthread src
+# add pthread support
 find_package(Threads)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
-# 写入库的版本信息
+# write version
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
         ${PROJECT_NAME}ConfigVersion.cmake
         VERSION ${PACKAGE_VERSION}
         COMPATIBILITY AnyNewerVersion)
 
-# 将库文件，可执行文件，头文件安装到指定目录
+# define PUBLIC_HEADER
 set_target_properties(${PROJECT_NAME}
         PROPERTIES PUBLIC_HEADER
         ${CMAKE_SOURCE_DIR}/include/smt_logger.h)
 
+# install everything
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}Targets
         LIBRARY DESTINATION lib
@@ -36,10 +36,10 @@ install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION bin
         PUBLIC_HEADER DESTINATION include)
 
-# 将库的相关信息输出为MyMathConfig.cmake，供find_package查找
+# export xxxConfig.cmake, so that find_package() can find it
 install(EXPORT ${PROJECT_NAME}Targets
         FILE ${PROJECT_NAME}Targets.cmake
-        NAMESPACE Leica::
+        NAMESPACE LEICA::
         DESTINATION lib/cmake/${PROJECT_NAME})
 
 configure_file(${PROJECT_NAME}Config.cmake.in ${PROJECT_NAME}Config.cmake @ONLY)

@@ -1,12 +1,11 @@
 #include "smt_logger.h"
 #include <cstdarg>
 
-#include "spdlog/sinks/daily_file_sink.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/spdlog.h"
 #include <iostream>
+#include <utility>
 #include "spdlog/sinks/rotating_file_sink.h"
-#include <stdarg.h>
 
 #ifdef __GNUC__
 #define vsprintf_s vsnprintf
@@ -18,11 +17,11 @@ constexpr auto LOG_PATTEN =
 constexpr auto LOG_PATTEN_NO_MODULE =
     "[%Y-%m-%d %H:%M:%S.%e][%^%L%$][thread %t][tag %w]: %v";
 
-LoggerConfig m_loggerConfig = {"default", LogLevel::ERR, false, 3};
+LoggerConfig mLoggerConfig = {"default", LogLevel::ERR, false, 3};
 
 std::shared_ptr<spdlog::logger> getLogger();
 
-void setupLogger(LoggerConfig config) { m_loggerConfig = config; }
+void setupLogger(LoggerConfig config) { mLoggerConfig = std::move(config); }
 
 void logDebug(std::string tag, const char *format, ...) {
   char buffer[256];
@@ -32,7 +31,7 @@ void logDebug(std::string tag, const char *format, ...) {
   va_end(args);
 
   // print log
-  getLogger()->debug(tag, buffer);
+  getLogger()->debug(std::move(tag), buffer);
 }
 
 void logInfo(std::string tag, const char *format, ...) {
@@ -43,7 +42,7 @@ void logInfo(std::string tag, const char *format, ...) {
   va_end(args);
 
   // print log
-  getLogger()->info(tag, buffer);
+  getLogger()->info(std::move(tag), buffer);
 }
 
 void logWarn(std::string tag, const char *format, ...) {
@@ -54,7 +53,7 @@ void logWarn(std::string tag, const char *format, ...) {
   va_end(args);
 
   // print log
-  getLogger()->warn(tag, buffer);
+  getLogger()->warn(std::move(tag), buffer);
 }
 
 void logError(std::string tag, const char *format, ...) {
@@ -65,7 +64,7 @@ void logError(std::string tag, const char *format, ...) {
   va_end(args);
 
   // print log
-  getLogger()->error(tag, buffer);
+  getLogger()->error(std::move(tag), buffer);
 }
 
 void logTrace(std::string tag, const char *format, ...) {
@@ -76,7 +75,7 @@ void logTrace(std::string tag, const char *format, ...) {
   va_end(args);
 
   // print log
-  getLogger()->trace(tag, buffer);
+  getLogger()->trace(std::move(tag), buffer);
 }
 
 void logCritical(std::string tag, const char *format, ...) {
@@ -87,7 +86,7 @@ void logCritical(std::string tag, const char *format, ...) {
   va_end(args);
 
   // print log
-  getLogger()->trace(tag, buffer);
+  getLogger()->trace(std::move(tag), buffer);
 }
 
 spdlog::level::level_enum findMatchedLogLevel(LogLevel logLevel) {
@@ -116,7 +115,7 @@ spdlog::level::level_enum findMatchedLogLevel(LogLevel logLevel) {
 }
 
 std::shared_ptr<spdlog::logger> getLogger() {
-  if (m_loggerConfig.module == "") {
+  if (mLoggerConfig.module == "") {
     std::cout
         << "no module specified, please set it with `setupLogger(LoggerConfig)`"
         << std::endl;
@@ -124,7 +123,7 @@ std::shared_ptr<spdlog::logger> getLogger() {
   }
 
   // find exist logger
-  auto logger = spdlog::get(m_loggerConfig.module);
+  auto logger = spdlog::get(mLoggerConfig.module);
   if (logger != nullptr) {
     return logger;
   }
@@ -135,20 +134,20 @@ std::shared_ptr<spdlog::logger> getLogger() {
 #endif // LOG_DEBUG
 
   // setup spdlog
-  auto logLevel = findMatchedLogLevel(m_loggerConfig.logLevel);
-  if (debugMode && !m_loggerConfig.logFileInDebugMode) {
-    logger = spdlog::stdout_color_mt(m_loggerConfig.module);
+  auto logLevel = findMatchedLogLevel(mLoggerConfig.logLevel);
+  if (debugMode && !mLoggerConfig.logFileInDebugMode) {
+    logger = spdlog::stdout_color_mt(mLoggerConfig.module);
   } else {
     // 5mb size max and 1 rotated file
     logger = spdlog::rotating_logger_mt(
-        m_loggerConfig.module, "logs/" + m_loggerConfig.module + ".log",
+            mLoggerConfig.module, "logs/" + mLoggerConfig.module + ".log",
         1024 * 1024 * 5, 1);
   }
 
   logger->set_level(logLevel);
 
   // don't print module when write file
-  if (debugMode && !m_loggerConfig.logFileInDebugMode) {
+  if (debugMode && !mLoggerConfig.logFileInDebugMode) {
     logger->set_pattern(LOG_PATTEN);
   } else {
     logger->set_pattern(LOG_PATTEN_NO_MODULE);
@@ -162,9 +161,9 @@ std::shared_ptr<spdlog::logger> getLogger() {
   }
 
   // flushFrequency must bigger than zero
-  if (m_loggerConfig.flushFrequency < 0) {
-    m_loggerConfig.flushFrequency = 1;
+  if (mLoggerConfig.flushFrequency < 0) {
+      mLoggerConfig.flushFrequency = 1;
   }
-  spdlog::flush_every(std::chrono::seconds(m_loggerConfig.flushFrequency));
+  spdlog::flush_every(std::chrono::seconds(mLoggerConfig.flushFrequency));
   return logger;
 }
