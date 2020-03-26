@@ -39,7 +39,7 @@ install(TARGETS ${PROJECT_NAME}
 # export xxxConfig.cmake, so that find_package() can find it
 install(EXPORT ${PROJECT_NAME}Targets
         FILE ${PROJECT_NAME}Targets.cmake
-        NAMESPACE LEICA::
+        NAMESPACE Leica::
         DESTINATION lib/cmake/${PROJECT_NAME})
 
 configure_file(${PROJECT_NAME}Config.cmake.in ${PROJECT_NAME}Config.cmake @ONLY)
