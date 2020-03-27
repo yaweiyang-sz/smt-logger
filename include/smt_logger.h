@@ -2,6 +2,13 @@
 
 #include <string>
 
+#define LOGINFO(fmt, ...) logInfo(__FILE__, fmt, ##__VA_ARGS__)
+#define LOGDEBUG(fmt, ...) logDebug(__FILE__, fmt, ##__VA_ARGS__)
+#define LOGWARN(fmt, ...) logWarn(__FILE__, fmt, ##__VA_ARGS__)
+#define LOGTRACE(fmt, ...) logTrace(__FILE__, fmt, ##__VA_ARGS__)
+#define LOGERROR(fmt, ...) logError(__FILE__, (std::string("[function:%s,line:%d]-")+std::string(fmt)).c_str(), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define LOGCRITICAL(fmt, ...) logCritical(__FILE__, (std::string("[function:%s,line:%d]-")+std::string(fmt)).c_str(), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+
 /**
  * @description: Log level enum definition
  */
