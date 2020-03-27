@@ -1,4 +1,4 @@
-project(SmtLogger VERSION 1.0.0)
+project(smtlogger VERSION 1.0.0)
 
 aux_source_directory(. DIR_SRCS)
 
