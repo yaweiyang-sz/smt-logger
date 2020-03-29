@@ -14,8 +14,6 @@ endif()
 find_package(Threads)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
-
 # write version
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
@@ -23,18 +21,16 @@ write_basic_package_version_file(
         VERSION ${PACKAGE_VERSION}
         COMPATIBILITY AnyNewerVersion)
 
-# define PUBLIC_HEADER
-set_target_properties(${PROJECT_NAME}
-        PROPERTIES PUBLIC_HEADER
-        ${CMAKE_SOURCE_DIR}/include/smt_logger.h)
+# install headers
+file(GLOB_RECURSE HEADER_FILES ${CMAKE_SOURCE_DIR}/include/smt_logger.h)
+install(FILES ${HEADER_FILES} DESTINATION include/${PROJECT_NAME})
 
 # install everything
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}Targets
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
-        RUNTIME DESTINATION bin
-        PUBLIC_HEADER DESTINATION include)
+        RUNTIME DESTINATION bin)
 
 # export xxxConfig.cmake, so that find_package() can find it
 install(EXPORT ${PROJECT_NAME}Targets
