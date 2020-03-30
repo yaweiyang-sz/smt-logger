@@ -21,16 +21,18 @@ write_basic_package_version_file(
         VERSION ${PACKAGE_VERSION}
         COMPATIBILITY AnyNewerVersion)
 
-# install headers
-file(GLOB_RECURSE HEADER_FILES ${CMAKE_SOURCE_DIR}/include/smt_logger.h)
-install(FILES ${HEADER_FILES} DESTINATION include/${PROJECT_NAME})
+# define headers
+set_target_properties(${PROJECT_NAME}	
+        PROPERTIES PUBLIC_HEADER	
+        ${CMAKE_SOURCE_DIR}/include/smt_logger.h)
 
 # install everything
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}Targets
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
-        RUNTIME DESTINATION bin)
+        RUNTIME DESTINATION bin
+        PUBLIC_HEADER DESTINATION include)
 
 # export xxxConfig.cmake, so that find_package() can find it
 install(EXPORT ${PROJECT_NAME}Targets
